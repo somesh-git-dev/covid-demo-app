@@ -3,13 +3,9 @@ import React, {useEffect, useState} from 'react';
 const Details = () => {
     const [data, setData] = useState([]);
     const getCovidData = async () => {
-        try {
-            const res = await fetch('https://data.covid19india.org/data.json');
-            const newVar = await res.json();
-            setData(newVar.statewise[26])
-        } catch (e) {
-            console.log(e)
-        }
+        const res = await fetch('https://data.covid19india.org/data.json');
+        const newVar = await res.json();
+        setData(newVar.statewise[26])
 
     }
 
